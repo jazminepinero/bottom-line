@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { theme, ThemeProvider, CSSReset } from "@chakra-ui/core";
 import Header from '../components/Header'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 

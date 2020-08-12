@@ -1,97 +1,66 @@
-import React from "react";
-import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
+import React, { useState } from 'react'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+import Button from 'react-bootstrap/Button'
 import Link from 'next/link'
+import styles from "../styles/Navbar.module.css"
 
-const MenuItems = ({ children }) => (
-  <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
-    {children}
-  </Text>
-);
 
-// Note: This code could be better, so I'd recommend you to understand how I solved and you could write yours better :)
-const Header = props => {
-  const [show, setShow] = React.useState(false);
-  const handleToggle = () => setShow(!show);
 
-  return (
-    <Flex
-      as="nav"
-      align="center"
-      justify="space-between"
-      wrap="wrap"
-      padding="1.5rem"
-      bg="black"
-      color="white"
-      {...props}
-    >
-      <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg" letterSpacing={".1rem"}>
-          Bottom Line Bookkeeper
-        </Heading>
-      </Flex>
 
-      <Box display={{ base: "block", md: "none" }} onClick={handleToggle}>
-        <svg
-          fill="white"
-          width="12px"
-          viewBox="0 0 20 20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-        </svg>
-      </Box>
+function Header(props) {
+  const [isHovered, setIsHovered] = useState(false)
+  const [isClicked, setIsClicked] = useState(false)
 
-      <Box
-        display={{ sm: show ? "block" : "none", md: "flex" }}
-        width={{ sm: "full", md: "auto" }}
-        alignItems="center"
-        flexGrow={1}
-      >
-        <MenuItems>
-        <Link href="/">
-        <a>
-       Home
-        </a>
-        </Link>
-        </MenuItems>
-        <MenuItems>
-        <Link href="/HowWorks">
-        <a>
-       How it works
-        </a>
-        </Link>
-        </MenuItems>
-        <MenuItems>
-        <Link href="/Pricing">
-        <a>
-       Pricing
-        </a>
-        </Link>
-        </MenuItems>
-        <MenuItems>
-        <Link href="/Guides">
-        <a>
-      Guides
-        </a>
-        </Link>
-        </MenuItems>
-      </Box>
 
-      <Box
-        display={{ sm: show ? "block" : "none", md: "block" }}
-        mt={{ base: 4, md: 0 }}
-      >
-        <Button bg="transparent" border="1px">
-            <Link href="/Account"> 
-                <a>
-          Create account   
-                </a>
-          </Link>
-        </Button>
-      </Box>
-    </Flex>
-  );
-};
+
+    return (
+        <div>
+        
+        <Navbar className={styles.navbar} sticky="top" collapseOnSelect expand="lg" bg="white" variant="light">
+        <Navbar.Brand  href="/">Bottom Line Bookkeeper</Navbar.Brand>
+        <div className={styles.navbar}>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="mr-auto">
+           
+          <Nav.Link href="/">Home</Nav.Link>
+          <NavDropdown 
+          className={styles.dropdown}
+          title="Account" 
+          id="basic-nav-dropdown"
+          {...props}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onToggle={() => setIsClicked(!isClicked)}
+          show={isClicked || isHovered}
+          >
+        <NavDropdown.Item className={styles.drop} href="/Account">Account</NavDropdown.Item>
+        <NavDropdown.Item className={styles.drop} href="#action/3.2">Another action</NavDropdown.Item>
+        <NavDropdown.Item className={styles.drop} href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item className={styles.drop} href="#action/3.4">Separated link</NavDropdown.Item>
+      </NavDropdown>
+         
+          
+          <Nav.Link href="/Guides">Guides</Nav.Link>
+          <Nav.Link href="/HowWorks">How it Works</Nav.Link>
+          <Nav.Link href="/Pricing">Pricing</Nav.Link>
+          <Nav.Link href="/Formm">Formm</Nav.Link>
+            
+                      
+           
+            
+          </Nav>
+        
+        </Navbar.Collapse>
+        </div>
+      </Navbar>
+    
+      </div>
+    )
+}
 
 export default Header;

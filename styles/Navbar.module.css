@@ -1,0 +1,13 @@
+.navbar {
+   text-align: center;
+    font-family: serif;
+}
+
+.drop {
+    text-align: center;
+}
+
+.drop:hover {
+    background-color: blueviolet;
+    color: whitesmoke;
+}
