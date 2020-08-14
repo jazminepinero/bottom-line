@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Container from 'react-bootstrap/Container'
@@ -48,7 +48,7 @@ function Header(props) {
           <Nav.Link href="/Guides">Guides</Nav.Link>
           <Nav.Link href="/HowWorks">How it Works</Nav.Link>
           <Nav.Link href="/Pricing">Pricing</Nav.Link>
-          <Nav.Link href="/Formm">Formm</Nav.Link>
+          <Nav.Link href="/Form">Form</Nav.Link>
             
                       
            

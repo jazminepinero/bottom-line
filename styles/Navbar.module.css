@@ -8,6 +8,6 @@
 }
 
 .drop:hover {
-    background-color: blueviolet;
-    color: whitesmoke;
+    background-color: blueviolet !important;
+    color: whitesmoke !important;
 }
