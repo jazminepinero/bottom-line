@@ -43,7 +43,7 @@ const Form = () => (
         </h3>
         </div>
         <div>
-          <h3>Business Location</h3>
+          <h5>Business Location</h5>
           </div>
           <div>
           <Field
@@ -77,15 +77,17 @@ const Form = () => (
           <h3>You are currently in business as?</h3>
           </div>
           <div>
-          <Field name="favoriteColor" component="select">
+          <Field name="businessType" placeholder="Business Type" component="select">
+      
             <option />
-            <option value="#ff0000">❤️ Sole Proprietor</option>
-            <option value="#00ff00">💚 LLC (Single member)</option>
-            <option value="#0000ff">💙 LLC (Multi member)</option>
-            <option value="#0000ff">💙 S - Corp (SM-LLC)</option>
-            <option value="#0000ff">💙 S - Corp (MM-LLC)</option>
-            <option value="#0000ff">💙 S - Corp (C Corp)</option>
-            <option value="#0000ff">💙 Other</option>
+            <option>Sole Proprietor</option>
+            <option>LLC (Single member)</option>
+            <option>LLC (Multi member)</option>
+            <option>S - Corp (SM-LLC)</option>
+            <option>S - Corp (MM-LLC)</option>
+            <option>S - Corp (C Corp)</option>
+            <option>Other</option>
+            
           </Field>
           <Error name="favoriteColor" />
         </div>

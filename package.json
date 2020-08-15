@@ -12,15 +12,23 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@material-ui/core": "^4.11.0",
+    "@zeit/next-css": "^1.0.1",
     "bootstrap": "^4.5.2",
     "emotion-theming": "^10.0.27",
+    "express": "^4.17.1",
     "final-form": "^4.20.1",
+    "mdbreact": "^4.27.0",
     "mui-rff": "^2.4.0",
-    "next": "9.5.1",
-    "react": "16.13.1",
+    "next": "^9.5.1",
+    "next-compose-plugins": "^2.2.0",
+    "next-fonts": "^1.4.0",
+    "next-images": "^1.4.1",
+    "next-page-transitions": "^1.0.0-beta.2",
+    "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
-    "react-dom": "16.13.1",
+    "react-dom": "^16.13.1",
     "react-final-form": "^6.5.1",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "use-places-autocomplete": "^1.3.10"
   }
 }
