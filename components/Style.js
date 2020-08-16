@@ -77,6 +77,9 @@ export default styled.div`
         width: 110px;
         font-size: 1em;
         line-height: 32px;
+        display: flex;
+        text-align: left;
+        justify-content: center;
       }
       & > input,
       & > select,
@@ -84,19 +87,24 @@ export default styled.div`
         flex: 1;
         padding: 3px 5px;
         font-size: 1em;
-        margin-left: 15px;
+        display: flex;
+        text-align:center;
+        justify-content: center;
         border: 1px solid #ccc;
         border-radius: 3px;
       }
       & > input[type="checkbox"] {
+        padding: 4px;
         margin-top: 7px;
       }
       & > div {
-        margin-left: 16px;
         & > label {
           display: block;
-          & > input {
-            margin-right: 3px;
+          & > input,
+          & > handling {
+            display: flex;
+            text-align:center;
+            justify-content: center;
           }
         }
       }

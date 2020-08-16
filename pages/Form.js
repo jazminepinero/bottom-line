@@ -4,7 +4,7 @@ import { Field } from 'react-final-form'
 import Wizard from '../components/Wizard'
 import Style from '../components/Style'
 import { Typography } from '@material-ui/core'
-
+import styled from 'styled-components'
 
 
 
@@ -26,6 +26,13 @@ const Error = ({ name }) => (
 )
 
 const required = value => (value ? undefined : 'Required')
+const Div = styled.div`
+display: flex;
+justify-content: center;
+padding: 2px;
+`;
+
+
 
 const Form = () => (
   <Style>
@@ -38,13 +45,10 @@ const Form = () => (
     >
       <Wizard.Page>
         <div>
-        <h3>
+        <h5>
          Where is your business located?
-        </h3>
+        </h5>
         </div>
-        <div>
-          <h5>Business Location</h5>
-          </div>
           <div>
           <Field
             name="state"
@@ -67,16 +71,12 @@ const Form = () => (
           return errors
         }}
       >
-        <div>
-          <Typography>
-            Business formation
-          </Typography>
-        </div>
+       
   
-        <div>
-          <h3>You are currently in business as?</h3>
-          </div>
-          <div>
+        <Div>
+          <h5>What is your current business formation?</h5>
+          </Div>
+          <Div>
           <Field name="businessType" placeholder="Business Type" component="select">
       
             <option />
@@ -89,8 +89,8 @@ const Form = () => (
             <option>Other</option>
             
           </Field>
-          <Error name="favoriteColor" />
-        </div>
+          <Error name="businessType" />
+        </Div>
       </Wizard.Page>
       <Wizard.Page
         validate={values => {
@@ -103,9 +103,12 @@ const Form = () => (
           return errors
         }}
       >
-        <div>
-          <label>Employed?</label>
-          <Field name="employed" component="input" type="checkbox" />
+        <Div>
+          <h5>Please describe your business very simply to us.</h5>
+          </Div>
+          <div>
+          
+          <Field name="notes" component="textarea" placeholder="We just want a general idea of your business so we know how to best handle your books!" />
         </div>
         <div>
           <label>Toppings</label>
@@ -129,35 +132,64 @@ const Form = () => (
         }}
       >
         <div>
-          <label>Best Stooge?</label>
-          <div>
-            <label>
+          <h4>What are you currently handling your books with?</h4>
+          </div>
+            <Div>
+            <p>
               <Field
-                name="stooge"
+                name="Quickbooks"
                 component="input"
                 type="radio"
-                value="larry"
+                value="QB"
               />{' '}
-              Larry
-            </label>
-            <label>
+              Quickbooks
+            </p>
+            </Div>
+            <Div>
+            <p>
+              <Field
+                name="Xero"
+                component="input"
+                type="radio"
+                value="QB"
+              />{' '}
+              Xero
+            </p>
+            </Div>
+            <Div>
+            <p>
               <Field name="stooge" component="input" type="radio" value="moe" />{' '}
-              Moe
-            </label>
-            <label>
+             Self Maintained
+            </p>
+            </Div>
+            <Div>
+            <p>
               <Field
                 name="stooge"
                 component="input"
                 type="radio"
                 value="curly"
               />{' '}
-              Curly
-            </label>
-          </div>
-        </div>
-        <div>
-          <label>Notes</label>
-          <Field name="notes" component="textarea" placeholder="Notes" />
+             Haven't really been keeping up
+            </p>
+            </Div>
+            <Div>
+            <p>
+              <Field
+                name="other"
+                component="input"
+                type="radio"
+                value="other"
+              />{' '}
+             Other
+            </p>
+            </Div>
+       
+        <Div>
+          <option>Anything else we should know about your books?</option>
+          </Div>
+          <div>
+          <Field name="notes" component="textarea" placeholder="Help us, help you!" />
           <Error name="notes" />
         </div>
       </Wizard.Page>
