@@ -108,7 +108,7 @@ const Form = () => (
           </Div>
           <div>
           
-          <Field name="notes" component="textarea" placeholder="We just want a general idea of your business so we know how to best handle your books!" />
+          <Field name="general" component="textarea" placeholder="We just want a general idea of your business so we know how to best handle your books!" />
         </div>
         <div>
           <label>Toppings</label>

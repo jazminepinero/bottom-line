@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import FirstSection from '../sections/FirstSection'
+import QuizSection from '../sections/QuizSection'
 
 
 export default function Home() {
@@ -13,6 +14,7 @@ export default function Home() {
         <title>Bottom Line Bookkeeper</title>
       </Head>
           <FirstSection />
+          <QuizSection />
       </div>
   )
 }

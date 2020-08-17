@@ -5,9 +5,16 @@ import Container from 'react-bootstrap/Container'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import Button from 'react-bootstrap/Button'
 import Link from 'next/link'
-import styles from "../styles/Navbar.module.css"
+import styled from 'styled-components'
 
 
+
+
+const StyledNavLink = styled(Nav.Link)`
+&:hover {
+  padding: 10px 10px 10px 10px
+}
+`;
 
 
 function Header(props) {
@@ -19,36 +26,18 @@ function Header(props) {
     return (
         <div>
         
-        <Navbar className={styles.navbar} sticky="top" collapseOnSelect expand="lg" bg="white" variant="light">
+        <Navbar sticky="top" collapseOnSelect expand="lg" bg="white" variant="light">
         <Navbar.Brand  href="/">Bottom Line Bookkeeper</Navbar.Brand>
-        <div className={styles.navbar}>
+        <div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
            
-          <Nav.Link href="/">Home</Nav.Link>
-          <NavDropdown 
-          className={styles.dropdown}
-          title="Account" 
-          id="basic-nav-dropdown"
-          {...props}
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onToggle={() => setIsClicked(!isClicked)}
-          show={isClicked || isHovered}
-          >
-        <NavDropdown.Item className={styles.drop} href="/Account">Account</NavDropdown.Item>
-        <NavDropdown.Item className={styles.drop} href="#action/3.2">Another action</NavDropdown.Item>
-        <NavDropdown.Item className={styles.drop} href="#action/3.3">Something</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item className={styles.drop} href="#action/3.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
-         
-          
-          <Nav.Link href="/Guides">Guides</Nav.Link>
-          <Nav.Link href="/HowWorks">How it Works</Nav.Link>
-          <Nav.Link href="/Pricing">Pricing</Nav.Link>
-          <Nav.Link href="/Form">Form</Nav.Link>
+          <StyledNavLink href="/">Home</StyledNavLink>
+          <StyledNavLink href="/Guides">Guides</StyledNavLink>
+          <StyledNavLink href="/HowWorks">How it Works</StyledNavLink>
+          <StyledNavLink href="/Pricing">Pricing</StyledNavLink>
+          <StyledNavLink href="/Form">Form</StyledNavLink>
             
                       
            
