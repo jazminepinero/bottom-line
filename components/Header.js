@@ -11,9 +11,14 @@ import styled from 'styled-components'
 
 
 const StyledNavLink = styled(Nav.Link)`
-&:hover {
-  padding: 10px 10px 10px 10px
+:hover {
+  padding: 10px 10px 10px 10px;
 }
+`;
+
+const StyledNavbar = styled(Navbar)`
+box-shadow: 2px 2px 8px cornflowerblue;
+
 `;
 
 
@@ -26,7 +31,7 @@ function Header(props) {
     return (
         <div>
         
-        <Navbar sticky="top" collapseOnSelect expand="lg" bg="white" variant="light">
+        <StyledNavbar sticky="top" collapseOnSelect expand="lg" bg="white" variant="light">
         <Navbar.Brand  href="/">Bottom Line Bookkeeper</Navbar.Brand>
         <div>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -46,7 +51,7 @@ function Header(props) {
         
         </Navbar.Collapse>
         </div>
-      </Navbar>
+      </StyledNavbar>
     
       </div>
     )

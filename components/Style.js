@@ -11,9 +11,10 @@ const btn = (light, dark) => css`
     color: white;
   }
   background-image: linear-gradient(${light}, ${dark});
-  border: 1px solid ${dark};
+ 
   &:hover {
-    background-image: linear-gradient(${light}, ${dark});
+    box-shadow: 3px 3px #888888;
+    
     &[disabled] {
       background-image: linear-gradient(${light}, ${dark});
     }
@@ -28,10 +29,11 @@ const btn = (light, dark) => css`
 `;
 
 const btnDefault = css`
-  ${btn("blueviolet", "purple")} color: #ffff;
+  ${btn("black", "black")} 
+  color: #ffff;
 `;
 
-const btnPrimary = btn("blueviolet", "purple");
+const btnPrimary = btn("black", "black");
 
 export default styled.div`
   font-family: sans-serif;
@@ -62,10 +64,7 @@ export default styled.div`
   form {
     max-width: 500px;
     margin: 10px auto;
-    border: 1px solid #ccc;
-    padding: 100px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    border-radius: 3px;
+  
 
     & > div {
       display: flex;
@@ -113,7 +112,7 @@ export default styled.div`
       display: flex;
       flex-flow: row nowrap;
       justify-content: center;
-      margin-top: 15px;
+      margin-top: 150px;
     }
     button {
       margin: 0 10px;

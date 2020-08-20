@@ -12,7 +12,8 @@ export default function Home() {
     <div>
       <Head>
         <title>Bottom Line Bookkeeper</title>
-      </Head>
+      
+        </Head>
           <FirstSection />
           <QuizSection />
       </div>
