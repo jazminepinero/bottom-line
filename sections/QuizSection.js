@@ -18,13 +18,29 @@ font-family: optima;
 
 
 
+
+
 function QuizSection() {
     return (
+        <>
         <CenterDiv>
-            <H3>We're available when you need us.</H3>
-            <p>At Bottom Line Bookkeeping we pride ourselves at always being ready to discuss your books. You can guarantee that we are never automated. You are always talking to a human. We're also obsessed with small businesses. </p>
+            <H3>Bookkeeping is Annoying.</H3>
+            </CenterDiv>
+
+            <CenterDiv>
+            <H3>That's why were here 😉</H3>
+           
         </CenterDiv>
+        <CenterDiv>
+            <img src="/speaker.png" />
+        </CenterDiv>
+        <CenterDiv>
+            <p>1. Fill out our Questionnairre</p>
+        </CenterDiv>
+        
+    </>
     )
+
 }
 
 export default QuizSection

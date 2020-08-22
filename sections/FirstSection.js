@@ -24,12 +24,21 @@ const Section = styled.section`
 
 
 const StyledButton = styled.button`
-    color: cornflowerblue;
-    background-color: white;
-    margin: 20px;
-    padding: 15px
-    &:hover {
-      background-color: cornflowerblue;
+box-shadow: 0px 10px 14px -7px #276873;
+background:linear-gradient(to bottom, lightblue 5%, cornflowerblue 100%);
+margin: 12px;
+background-color:#599bb3;
+border-radius:8px;
+cursor:pointer;
+color:#ffffff;
+font-size:20px;
+font-weight:bold;
+padding:13px 32px;
+text-decoration:none;
+text-shadow:0px 1px 0px #3d768a;
+ &:hover {
+  background:linear-gradient(to bottom, cornflowerblue 5%, lightblue 100%);
+	background-color:#408c99;
       }
 `;
 
@@ -47,7 +56,7 @@ function FirstSection() {
           <br />We're affordable & fast, because we know you have a business to run.
           <br /> Just fill out our Bookkeeping questionaire below to get down to the bottom line.</P>
           <Link href="/Form">
-            <StyledButton> tell us more about your books</StyledButton>
+            <StyledButton> Get Started</StyledButton>
           </Link>
         </Section>
         </div>

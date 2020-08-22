@@ -43,6 +43,7 @@ function Header(props) {
           <StyledNavLink href="/HowWorks">How it Works</StyledNavLink>
           <StyledNavLink href="/Pricing">Pricing</StyledNavLink>
           <StyledNavLink href="/Form">Form</StyledNavLink>
+          <StyledNavLink href="/FormWizard">Form Wizard</StyledNavLink>
             
                       
            

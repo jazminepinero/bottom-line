@@ -6,16 +6,10 @@ import Style from '../components/Style'
 import { Typography } from '@material-ui/core'
 import styled from 'styled-components'
 import Search from '../components/Search'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 
-
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-
-const onSubmit = async values => {
-  await sleep(300)
-
-}
 
 const Error = ({ name }) => (
   <Field
@@ -49,14 +43,20 @@ padding: 2px;
 
 
 const Form = () => (
+
+
+
+ 
+
   <Style>
+   <Head>
+  <title>Questionnaire | Bottom Line Bookkeeper</title>
+
+  </Head>
     <br />
     <h1>Hey, let's talk about your bookkeeping</h1>
    <br />
-    <Wizard
-      
-      onSubmit={onSubmit}
-    >
+    <Wizard action="/success" method="POST" data-netlify="true">
       <Wizard.Page>
         <Div>
         <h5>
@@ -204,6 +204,7 @@ const Form = () => (
       </Wizard.Page>
     </Wizard>
  </Style>
+ 
 );
 
 
